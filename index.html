@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Hansol Technics Mexico corporate website">
+<title>Hansol Technics Mexico</title>
+<style>
+:root{
+  --blue:#0757b7; --blue2:#003b82; --navy:#061f3e; --ink:#171a20;
+  --muted:#66717f; --line:#e7ebf0; --green:#1f9a59; --bg:#f6f8fb;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,"Noto Sans KR","Segoe UI",sans-serif;color:var(--ink);background:#fff}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.container{width:min(1340px,92vw);margin:auto}
+header{
+  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);
+  backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06)
+}
+.navbar{height:76px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.logo img{width:155px}
+.nav{display:flex;gap:42px;font-size:15px;font-weight:700}
+.nav a{padding:28px 0;position:relative}
+.nav a:after{content:"";position:absolute;left:0;right:100%;bottom:0;height:3px;background:var(--blue);transition:.25s}
+.nav a:hover:after{right:0}
+.lang{display:flex;gap:13px;font-size:13px}
+.lang button{border:0;background:transparent;cursor:pointer;color:#555;padding:4px}
+.lang .active{color:var(--blue);font-weight:800;border-bottom:2px solid var(--blue)}
+.hero{position:relative;min-height:590px;overflow:hidden;background:#edf5ff}
+.hero-bg{position:absolute;inset:0;background:url('assets/hero-factory.jpg') center/cover no-repeat}
+.hero-bg:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.86) 27%,rgba(255,255,255,.18) 58%,rgba(255,255,255,.03) 100%)
+}
+.hero-inner{position:relative;z-index:2;min-height:590px;display:flex;align-items:center}
+.hero-copy{width:min(570px,82vw);padding-left:18px;border-left:2px solid var(--blue)}
+.hero-copy h1{font-size:60px;line-height:1.04;margin:0 0 22px;letter-spacing:-2.7px}
+.hero-copy h1 span{color:var(--blue)}
+.hero-copy p{font-size:18px;line-height:1.75;color:#3c4650;margin:0 0 34px}
+.hero-site{margin-top:38px;font-weight:800;font-size:18px}.hero-site small{font-weight:400;color:#4a5663;display:block;margin-top:6px}
+.hero-side{
+  position:absolute;right:0;top:0;bottom:0;width:130px;z-index:3;
+  background:linear-gradient(180deg,#0752ae,#0067c8);color:white;
+  display:flex;flex-direction:column;justify-content:center;align-items:center
+}
+.value{width:78px;text-align:center;padding:28px 0;border-bottom:1px solid rgba(255,255,255,.25);font-size:12px;line-height:1.35}
+.value:last-child{border:0}
+.value .icon{font-size:30px;margin-bottom:10px}
+section{padding:78px 0}
+.section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:32px}
+.kicker{color:var(--blue);font-weight:900;letter-spacing:.08em;font-size:14px}
+.section-title h2{font-size:40px;margin:7px 0 0;letter-spacing:-1.5px}
+.section-title p{max-width:590px;color:var(--muted);line-height:1.7}
+.business-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.biz{border:1px solid var(--line);background:#fff;transition:.25s;overflow:hidden}
+.biz:hover{transform:translateY(-6px);box-shadow:0 18px 45px rgba(24,55,90,.12)}
+.biz .photo{height:165px;background-size:cover;background-position:center}
+.biz .body{padding:24px;min-height:210px}
+.biz h3{color:#064faa;margin:0 0 12px;font-size:20px;line-height:1.25}
+.biz p{color:#5e6976;line-height:1.65;font-size:14px}
+.biz .more{margin-top:18px;color:var(--blue);font-weight:800;font-size:13px}
+.performance{
+  padding:0;background:linear-gradient(rgba(2,27,56,.91),rgba(2,27,56,.91)),url('assets/factory-strip.jpg') center/cover no-repeat;color:#fff
+}
+.performance .container{padding:48px 0}
+.performance-grid{display:grid;grid-template-columns:1.5fr repeat(4,1fr)}
+.perf-intro{padding-right:40px}
+.perf-intro h3{font-size:25px;line-height:1.2;margin:0 0 14px}
+.perf-intro p{color:#cad7e5;line-height:1.65;font-size:14px}
+.metric{border-left:1px solid rgba(255,255,255,.2);display:flex;flex-direction:column;justify-content:center;padding:12px 28px}
+.metric b{font-size:35px;margin-bottom:5px}.metric span{font-size:13px;color:#cbd6e3}
+.manufacturing{background:var(--bg)}
+.manufacturing-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+.man-card{background:#fff;border:1px solid var(--line);padding:34px}
+.man-card h3{font-size:26px;margin:0 0 12px}.man-card p{color:var(--muted);line-height:1.7}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:30px}
+.step{padding:20px;border-top:3px solid var(--blue);background:#f8fbff}
+.step b{display:block;color:var(--blue);font-size:13px;margin-bottom:7px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.tile{min-height:285px;position:relative;overflow:hidden;color:white;padding:30px;display:flex;align-items:flex-end}
+.tile:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(0,23,48,.78))}
+.tile .content{position:relative;z-index:1}
+.tile h3{font-size:28px;margin:0 0 10px}.tile p{margin:0;color:#e4ebf2}
+.news{border-top:1px solid var(--line)}
+.news-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:32px}
+.news-list{border-top:2px solid var(--ink)}
+.news-item{display:grid;grid-template-columns:1fr auto;gap:20px;padding:22px 2px;border-bottom:1px solid var(--line)}
+.news-item b{font-size:16px}.news-item span{color:#8893a0;font-size:13px}
+.contact-card{background:linear-gradient(135deg,#0758b5,#003f8b);color:#fff;padding:36px}
+.contact-card h3{font-size:30px;margin:0 0 15px}.contact-card p{color:#dfeaff;line-height:1.7}
+footer{background:#101418;color:#d3d7db;padding:38px 0}
+.footer-grid{display:flex;align-items:center;justify-content:space-between;gap:40px;font-size:12px}
+.footer-logo img{width:130px;filter:brightness(0) invert(1)}
+.footer-info{flex:1;line-height:1.65}
+.badge{display:inline-block;padding:6px 10px;border:1px solid rgba(255,255,255,.25);margin-top:10px}
+@media(max-width:1100px){
+  .nav{gap:20px;font-size:13px}.business-grid{grid-template-columns:1fr 1fr}
+  .performance-grid{grid-template-columns:1fr 1fr 1fr}.perf-intro{grid-column:1/-1}
+}
+@media(max-width:760px){
+  .nav{display:none}.navbar{height:66px}.logo img{width:132px}
+  .hero,.hero-inner{min-height:600px}.hero-side{display:none}
+  .hero-copy h1{font-size:44px}.hero-bg{background-position:68% center}
+  .hero-bg:after{background:linear-gradient(90deg,rgba(255,255,255,.97),rgba(255,255,255,.78) 70%,rgba(255,255,255,.45))}
+  section{padding:58px 0}.section-title{display:block}.section-title p{margin-top:18px}
+  .business-grid,.manufacturing-grid,.tiles,.news-grid,.performance-grid{grid-template-columns:1fr}
+  .metric{border-left:0;border-top:1px solid rgba(255,255,255,.2)}
+  .flow{grid-template-columns:1fr 1fr}.footer-grid{display:block}.footer-info{margin:20px 0}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container navbar">
+    <a class="logo" href="#top"><img src="assets/hansol-ci.png" alt="Hansol"></a>
+    <nav class="nav">
+      <a href="#about" data-i18n="nav.about">회사소개</a><a href="#business" data-i18n="nav.business">사업영역</a><a href="#manufacturing" data-i18n="nav.manufacturing">제조경쟁력</a>
+      <a href="#sustainability" data-i18n="nav.sustainability">지속가능경영</a><a href="#careers" data-i18n="nav.careers">인재채용</a><a href="#news" data-i18n="nav.news">소식</a><a href="#contact" data-i18n="nav.contact">문의</a>
+    </nav>
+    <div class="lang"><button class="active" data-lang="ko">KR</button><button data-lang="en">EN</button><button data-lang="es">ES</button></div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <h1 data-i18n-html="hero.title">Better Technology,<br><span>Better Future</span></h1>
+      <p data-i18n-html="hero.desc">한솔테크닉스 멕시코 법인은 혁신적인 기술과 최고의 품질로<br>더 나은 내일을 만들어갑니다.</p>
+      <div class="hero-site" data-i18n-html="hero.site">Hansol Technics Mexico<small>San Luis Potosí, Mexico</small></div>
+    </div>
+  </div>
+  <aside class="hero-side">
+    <div class="value"><div class="icon">◎</div><span data-i18n-html="value.tech">Smart<br>Technology</span></div>
+    <div class="value"><div class="icon">⚙</div><span data-i18n-html="value.quality">Quality<br>Excellence</span></div>
+    <div class="value"><div class="icon">◉</div><span data-i18n-html="value.customer">Customer<br>Satisfaction</span></div>
+  </aside>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-title">
+      <div><div class="kicker">HANSOL TECHNICS MEXICO</div><h2 data-i18n="about.title">북미 시장과 더 가까운 제조 거점</h2></div>
+      <p data-i18n="about.desc">한솔테크닉스의 전자 제조·품질·자동화 역량을 기반으로 San Luis Potosí에서 고객 근접 대응과 안정적인 공급을 실현합니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="business">
+  <div class="container">
+    <div class="section-title">
+      <div><div class="kicker">OUR BUSINESS</div><h2 data-i18n="business.title">기술과 고객 중심 솔루션</h2></div>
+      <p data-i18n="business.desc">북미 모빌리티·전자 산업을 위한 핵심 제품과 제조서비스를 중심으로 사업을 전개합니다.</p>
+    </div>
+    <div class="business-grid">
+      <article class="biz"><div class="photo" style="background-image:url('assets/wireless.jpg')"></div><div class="body">
+        <h3>Wireless Charging<br>(TX/RX Module)</h3><p data-i18n="biz.wireless.desc">독자적인 무선충전 기술로 더 편리하고 안전한 모빌리티 라이프를 제공합니다.</p><div class="more" data-i18n="more">자세히 보기 →</div>
+      </div></article>
+      <article class="biz"><div class="photo" style="background-image:url('assets/lamp.jpg')"></div><div class="body">
+        <h3>Automotive Lighting<br>(Rear Lamp)</h3><p data-i18n="biz.lamp.desc">고도화된 기술과 디자인으로 차량의 안전성과 가치를 높이는 램프 솔루션을 제공합니다.</p><div class="more" data-i18n="more">자세히 보기 →</div>
+      </div></article>
+      <article class="biz"><div class="photo" style="background-image:url('assets/ems.jpg')"></div><div class="body">
+        <h3>Electronics Manufacturing<br>Services (EMS)</h3><p data-i18n="biz.ems.desc">축적된 생산 노하우와 스마트 팩토리 기반의 EMS로 최고 품질의 제품을 안정적으로 공급합니다.</p><div class="more" data-i18n="more">자세히 보기 →</div>
+      </div></article>
+      <article class="biz"><div class="photo" style="background-image:url('assets/new-business.jpg')"></div><div class="body">
+        <h3>New Business</h3><p data-i18n="biz.new.desc">지속적인 연구개발과 혁신으로 미래 모빌리티를 선도할 신사업을 추진합니다.</p><div class="more" data-i18n="more">자세히 보기 →</div>
+      </div></article>
+    </div>
+  </div>
+</section>
+
+<section class="performance">
+  <div class="container performance-grid">
+    <div class="perf-intro"><h3 data-i18n-html="why.title">WHY CHOOSE<br>HANSOL TECHNICS MEXICO</h3><p data-i18n="why.desc">최첨단 설비와 우수한 인재, 체계적인 품질관리로 글로벌 고객의 기대를 뛰어넘습니다.</p></div>
+    <div class="metric"><b>SLP</b><span data-i18n="metric.slp">전략적 생산거점</span></div>
+    <div class="metric"><b>Smart</b><span data-i18n="metric.smart">자동화·Traceability</span></div>
+    <div class="metric"><b>Global</b><span data-i18n="metric.global">북미 고객 대응</span></div>
+    <div class="metric"><b>Zero Defect</b><span data-i18n="metric.zero">품질 지향</span></div>
+  </div>
+</section>
+
+<section class="manufacturing" id="manufacturing">
+  <div class="container">
+    <div class="section-title">
+      <div><div class="kicker">MANUFACTURING EXCELLENCE</div><h2 data-i18n="mfg.title">데이터 기반 스마트 제조</h2></div>
+      <p data-i18n="mfg.desc">표준화, 공정 내 품질관리, 자동화와 추적성을 연결해 안정적인 생산체계를 구축합니다.</p>
+    </div>
+    <div class="manufacturing-grid">
+      <div class="man-card">
+        <h3>From Material to Shipment</h3>
+        <p data-i18n="mfg.flow.desc">자재 입고부터 조립, 검사, 출하까지 핵심 공정 정보를 연결하여 빠른 문제 해결과 지속적인 개선을 지원합니다.</p>
+        <div class="flow">
+          <div class="step"><b>01</b>Incoming</div><div class="step"><b>02</b>Assembly</div>
+          <div class="step"><b>03</b>Inspection</div><div class="step"><b>04</b>Shipment</div>
+        </div>
+      </div>
+      <div class="man-card">
+        <h3>Quality by Design</h3>
+        <p data-i18n="mfg.quality.desc">공정설계 단계부터 품질을 내재화하고 고객 요구사항과 제조 데이터를 연결하여 예방 중심의 품질경영을 지향합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sustainability">
+  <div class="container tiles">
+    <div class="tile" style="background:url('assets/sustainability.jpg') center/cover no-repeat">
+      <div class="content"><h3>SUSTAINABILITY</h3><p data-i18n="sustain.desc">환경과 사회, 지배구조의 균형을 통해 지속가능한 가치를 창출합니다.</p></div>
+    </div>
+    <div class="tile" id="careers" style="background:url('assets/careers.jpg') center/cover no-repeat">
+      <div class="content"><h3>CAREERS</h3><p data-i18n="careers.desc">도전과 성장의 기회가 있는 Hansol Technics Mexico에서 미래를 함께 만듭니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="news" class="news">
+  <div class="container news-grid">
+    <div>
+      <div class="section-title" style="margin-bottom:20px"><div><div class="kicker">NEWS</div><h2 data-i18n="news.title">소식</h2></div></div>
+      <div class="news-list">
+        <div class="news-item"><b data-i18n="news.1">Hansol Technics Mexico 홈페이지 오픈 준비</b><span>2026.08</span></div>
+        <div class="news-item"><b data-i18n="news.2">San Luis Potosí 제조법인 SET-UP 진행</b><span>2026</span></div>
+        <div class="news-item"><b data-i18n="news.3">스마트 제조·품질 시스템 구축</b><span>2026</span></div>
+      </div>
+    </div>
+    <div class="contact-card" id="contact">
+      <h3>Contact Mexico</h3>
+      <p>San Luis Potosí, S.L.P., México<br><br>
+      TEL · +52 (___) ___-____<br>
+      E-mail · contact.mexico@example.com</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div class="footer-logo"><img src="assets/hansol-ci.png" alt="Hansol"></div>
+    <div class="footer-info"><b>Hansol Technics Mexico</b><br>
+      San Luis Potosí, S.L.P., México<br>
+      <span class="badge">Corporate Website Prototype</span>
+    </div>
+    <div>© 2026 Hansol Technics Mexico.<br>All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+const I18N = {
+  ko: {
+    "nav.about":"회사소개","nav.business":"사업영역","nav.manufacturing":"제조경쟁력","nav.sustainability":"지속가능경영","nav.careers":"인재채용","nav.news":"소식","nav.contact":"문의",
+    "hero.title":"Better Technology,<br><span>Better Future</span>",
+    "hero.desc":"한솔테크닉스 멕시코 법인은 혁신적인 기술과 최고의 품질로<br>더 나은 내일을 만들어갑니다.",
+    "hero.site":"Hansol Technics Mexico<small>San Luis Potosí, Mexico</small>",
+    "value.tech":"Smart<br>Technology","value.quality":"Quality<br>Excellence","value.customer":"Customer<br>Satisfaction",
+    "about.title":"북미 시장과 더 가까운 제조 거점",
+    "about.desc":"한솔테크닉스의 전자 제조·품질·자동화 역량을 기반으로 San Luis Potosí에서 고객 근접 대응과 안정적인 공급을 실현합니다.",
+    "business.title":"기술과 고객 중심 솔루션","business.desc":"북미 모빌리티·전자 산업을 위한 핵심 제품과 제조서비스를 중심으로 사업을 전개합니다.",
+    "biz.wireless.desc":"독자적인 무선충전 기술로 더 편리하고 안전한 모빌리티 라이프를 제공합니다.",
+    "biz.lamp.desc":"고도화된 기술과 디자인으로 차량의 안전성과 가치를 높이는 램프 솔루션을 제공합니다.",
+    "biz.ems.desc":"축적된 생산 노하우와 스마트 팩토리 기반의 EMS로 최고 품질의 제품을 안정적으로 공급합니다.",
+    "biz.new.desc":"지속적인 연구개발과 혁신으로 미래 모빌리티를 선도할 신사업을 추진합니다.",
+    "more":"자세히 보기 →",
+    "why.title":"WHY CHOOSE<br>HANSOL TECHNICS MEXICO",
+    "why.desc":"최첨단 설비와 우수한 인재, 체계적인 품질관리로 글로벌 고객의 기대를 뛰어넘습니다.",
+    "metric.slp":"전략적 생산거점","metric.smart":"자동화·Traceability","metric.global":"북미 고객 대응","metric.zero":"품질 지향",
+    "mfg.title":"데이터 기반 스마트 제조","mfg.desc":"표준화, 공정 내 품질관리, 자동화와 추적성을 연결해 안정적인 생산체계를 구축합니다.",
+    "mfg.flow.desc":"자재 입고부터 조립, 검사, 출하까지 핵심 공정 정보를 연결하여 빠른 문제 해결과 지속적인 개선을 지원합니다.",
+    "mfg.quality.desc":"공정설계 단계부터 품질을 내재화하고 고객 요구사항과 제조 데이터를 연결하여 예방 중심의 품질경영을 지향합니다.",
+    "sustain.desc":"환경과 사회, 지배구조의 균형을 통해 지속가능한 가치를 창출합니다.",
+    "careers.desc":"도전과 성장의 기회가 있는 Hansol Technics Mexico에서 미래를 함께 만듭니다.",
+    "news.title":"소식","news.1":"Hansol Technics Mexico 홈페이지 오픈 준비","news.2":"San Luis Potosí 제조법인 SET-UP 진행","news.3":"스마트 제조·품질 시스템 구축"
+  },
+  en: {
+    "nav.about":"About","nav.business":"Business","nav.manufacturing":"Manufacturing","nav.sustainability":"Sustainability","nav.careers":"Careers","nav.news":"News","nav.contact":"Contact",
+    "hero.title":"Better Technology,<br><span>Better Future</span>",
+    "hero.desc":"Hansol Technics Mexico creates a better future<br>through innovative technology and uncompromising quality.",
+    "hero.site":"Hansol Technics Mexico<small>San Luis Potosí, Mexico</small>",
+    "value.tech":"Smart<br>Technology","value.quality":"Quality<br>Excellence","value.customer":"Customer<br>Satisfaction",
+    "about.title":"A manufacturing hub closer to North America",
+    "about.desc":"From San Luis Potosí, we combine Hansol Technics' electronics manufacturing, quality and automation capabilities to provide responsive local support and stable supply.",
+    "business.title":"Technology and customer-focused solutions","business.desc":"We serve the North American mobility and electronics markets through key products and manufacturing services.",
+    "biz.wireless.desc":"Our wireless charging technology delivers more convenient and safer mobility experiences.",
+    "biz.lamp.desc":"Advanced technology and design enhance vehicle safety, functionality and value through automotive lighting solutions.",
+    "biz.ems.desc":"Proven manufacturing know-how and smart-factory capabilities enable stable delivery of high-quality EMS products.",
+    "biz.new.desc":"Continuous R&D and innovation drive new businesses for the future of mobility.",
+    "more":"Learn more →",
+    "why.title":"WHY CHOOSE<br>HANSOL TECHNICS MEXICO",
+    "why.desc":"Advanced facilities, talented people and systematic quality management help us exceed global customer expectations.",
+    "metric.slp":"Strategic manufacturing hub","metric.smart":"Automation & traceability","metric.global":"North American customer support","metric.zero":"Quality-driven operation",
+    "mfg.title":"Data-driven smart manufacturing","mfg.desc":"We connect standardization, in-process quality, automation and traceability to build a stable manufacturing system.",
+    "mfg.flow.desc":"From incoming materials through assembly, inspection and shipment, critical process data is connected to support faster problem solving and continuous improvement.",
+    "mfg.quality.desc":"We embed quality from process design and connect customer requirements with manufacturing data for preventive quality management.",
+    "sustain.desc":"We create sustainable value through a balanced approach to environment, society and governance.",
+    "careers.desc":"Build the future with Hansol Technics Mexico in an environment of challenge, opportunity and growth.",
+    "news.title":"News","news.1":"Hansol Technics Mexico website launch preparation","news.2":"San Luis Potosí manufacturing subsidiary setup in progress","news.3":"Smart manufacturing and quality systems implementation"
+  },
+  es: {
+    "nav.about":"Empresa","nav.business":"Negocios","nav.manufacturing":"Manufactura","nav.sustainability":"Sostenibilidad","nav.careers":"Empleo","nav.news":"Noticias","nav.contact":"Contacto",
+    "hero.title":"Mejor tecnología,<br><span>un mejor futuro</span>",
+    "hero.desc":"Hansol Technics México crea un futuro mejor<br>con tecnología innovadora y excelencia en calidad.",
+    "hero.site":"Hansol Technics México<small>San Luis Potosí, México</small>",
+    "value.tech":"Tecnología<br>inteligente","value.quality":"Excelencia<br>en calidad","value.customer":"Satisfacción<br>del cliente",
+    "about.title":"Un centro de manufactura más cerca de Norteamérica",
+    "about.desc":"Desde San Luis Potosí integramos las capacidades de Hansol Technics en manufactura electrónica, calidad y automatización para brindar respuesta local y suministro estable.",
+    "business.title":"Soluciones centradas en tecnología y clientes","business.desc":"Atendemos los mercados de movilidad y electrónica de Norteamérica mediante productos clave y servicios de manufactura.",
+    "biz.wireless.desc":"Nuestra tecnología de carga inalámbrica ofrece experiencias de movilidad más cómodas y seguras.",
+    "biz.lamp.desc":"La tecnología avanzada y el diseño elevan la seguridad, funcionalidad y valor del vehículo mediante soluciones de iluminación automotriz.",
+    "biz.ems.desc":"Nuestra experiencia productiva y las capacidades de fábrica inteligente permiten suministrar productos EMS de alta calidad de forma estable.",
+    "biz.new.desc":"La investigación, el desarrollo y la innovación continua impulsan nuevos negocios para la movilidad del futuro.",
+    "more":"Ver más →",
+    "why.title":"POR QUÉ ELEGIR<br>HANSOL TECHNICS MÉXICO",
+    "why.desc":"Instalaciones avanzadas, talento sobresaliente y una gestión sistemática de calidad nos permiten superar las expectativas de clientes globales.",
+    "metric.slp":"Centro estratégico de manufactura","metric.smart":"Automatización y trazabilidad","metric.global":"Atención a clientes de Norteamérica","metric.zero":"Operación enfocada en calidad",
+    "mfg.title":"Manufactura inteligente basada en datos","mfg.desc":"Conectamos estandarización, calidad en proceso, automatización y trazabilidad para construir un sistema productivo estable.",
+    "mfg.flow.desc":"Desde la recepción de materiales hasta ensamble, inspección y embarque, conectamos datos clave para resolver problemas con rapidez y mejorar continuamente.",
+    "mfg.quality.desc":"Integramos la calidad desde el diseño del proceso y conectamos los requisitos del cliente con datos de manufactura para una gestión preventiva.",
+    "sustain.desc":"Creamos valor sostenible mediante un equilibrio entre medio ambiente, sociedad y gobierno corporativo.",
+    "careers.desc":"Construye el futuro con Hansol Technics México en un entorno de desafío, oportunidad y crecimiento.",
+    "news.title":"Noticias","news.1":"Preparación del lanzamiento del sitio de Hansol Technics México","news.2":"Avance del establecimiento de la planta en San Luis Potosí","news.3":"Implementación de sistemas de manufactura inteligente y calidad"
+  }
+};
+
+function setLanguage(lang){
+  const dict = I18N[lang] || I18N.ko;
+  document.documentElement.lang = lang === "ko" ? "ko" : lang;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key = el.dataset.i18n;
+    if(dict[key] !== undefined) el.textContent = dict[key];
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach(el=>{
+    const key = el.dataset.i18nHtml;
+    if(dict[key] !== undefined) el.innerHTML = dict[key];
+  });
+  document.querySelectorAll(".lang button").forEach(btn=>{
+    btn.classList.toggle("active", btn.dataset.lang === lang);
+  });
+  localStorage.setItem("hansolLang", lang);
+}
+document.querySelectorAll(".lang button").forEach(btn=>{
+  btn.addEventListener("click", ()=>setLanguage(btn.dataset.lang));
+});
+setLanguage(localStorage.getItem("hansolLang") || "ko");
+</script>
+
+</body>
+</html>
